@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Task3">
         <activity
+            android:name=".Quiz"
+            android:exported="false" />
+        <activity
+            android:name=".Practice"
+            android:exported="false" />
+        <activity
+            android:name=".MainApp"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

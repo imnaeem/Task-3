@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button repo_btn;
+    Button repo_btn, main_app;
     String url ="https://github.com/imnaeem/";
 
     @Override
@@ -19,11 +19,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         repo_btn = findViewById(R.id.repo);
+        main_app = findViewById(R.id.mainapp);
 
         repo_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openWebPage(url);
+            }
+        });
+
+        main_app.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MainApp.class);
+                startActivity(intent);
             }
         });
     }
@@ -36,5 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent(Intent.ACTION_VIEW, webpage);
         startActivity(intent);
     }
+
+
 
 }
