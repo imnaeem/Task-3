@@ -6,78 +6,79 @@
     android:layout_height="match_parent"
     tools:context=".Quiz">
 
-    <LinearLayout
-        android:layout_width="181dp"
-        android:layout_height="190dp"
-        android:layout_marginStart="212dp"
-        android:layout_marginTop="16dp"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewtext">
-
-        <Button
-            android:id="@+id/lahatiyahbtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Lahatiyah" />
-
-        <Button
-            android:id="@+id/tarfiyahbtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tarfiyah" />
-
-        <Button
-            android:id="@+id/lisaveyahbtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Lisaveyah" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Next" />
-
-    </LinearLayout>
-
     <TextView
         android:id="@+id/viewtext"
+        android:layout_width="match_parent"
+        android:layout_height="253dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="20dp"
+        android:background="#595656"
+        android:paddingLeft="60dp"
+        android:paddingTop="20dp"
+        android:paddingRight="60dp"
+        android:shadowColor="#873131"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="200sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/qno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="TextView"
-        android:textSize="60sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:background="#595656"
+        android:padding="2dp"
+        android:text="Question No."
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:background="#595656"
+        android:padding="2dp"
+        android:text="Select the correct option:"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewtext" />
+
+    <TextView
+        android:id="@+id/questionno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="16dp"
+        android:text="1"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="181dp"
-        android:layout_height="190dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewtext">
-
-        <Button
-            android:id="@+id/halqiyahbtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Halqiyah" />
-
-        <Button
-            android:id="@+id/shajariyahbtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Shajariyah" />
-
-        <Button
-            android:id="@+id/niteeyahbtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nit_eeyah" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
 
         <Button
             android:id="@+id/ghunnabtn"
@@ -85,24 +86,119 @@
             android:layout_height="wrap_content"
             android:text="ghunna" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="377dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="350dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="parent">
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#009678"
+            android:text="Next" />
 
         <Button
             android:id="@+id/endquizbtn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:backgroundTint="#333331"
+            android:text="End Quiz" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/options">
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/halqiyahbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Halqiyah" />
+
+            <Button
+                android:id="@+id/shajariyahbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Shajariyah" />
+
+            <Button
+                android:id="@+id/niteeyahbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nit_eeyah" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="End Quiz" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/lahatiyahbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lahatiyah" />
+
+            <Button
+                android:id="@+id/tarfiyahbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tarfiyah" />
+
+            <Button
+                android:id="@+id/lisaveyahbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lisaveyah" />
+
+        </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="52dp"
+        android:background="#595656"
+        android:padding="2dp"
+        android:text="Score:"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="00"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.178"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
