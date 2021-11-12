@@ -171,6 +171,7 @@ public class Quiz extends AppCompatActivity {
                 Intent intent = new Intent(Quiz.this, Result.class);
                 intent.putExtra("Total_Questions", totalquestions);
                 intent.putExtra("Score", score);
+
                 startActivity(intent);
             }
         });
