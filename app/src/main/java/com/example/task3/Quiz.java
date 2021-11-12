@@ -23,7 +23,7 @@ public class Quiz extends AppCompatActivity {
     String[] ghunna = {"م","ن", "ف","ب","م","و","باَ","بوُ","بىِ"};
 
     TextView word, questionno_tv, score_tv;
-    Button halqiyah_btn, lahatiyah_btn, shajariyah_haafiyah_btn, tarfiyah_btn, nit_eeyah_btn, lisaveyah_btn, ghunna_btn, next_btn;
+    Button halqiyah_btn, lahatiyah_btn, shajariyah_haafiyah_btn, tarfiyah_btn, nit_eeyah_btn, lisaveyah_btn, ghunna_btn, next_btn, end_btn;
 
 
     int q_no=1;
@@ -52,13 +52,14 @@ public class Quiz extends AppCompatActivity {
         lisaveyah_btn=findViewById(R.id.lisaveyahbtn);
         ghunna_btn = findViewById(R.id.ghunnabtn);
         next_btn = findViewById(R.id.nextbtn);
+        end_btn = findViewById(R.id.endquizbtn);
 
         halqiyah_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (answerSelected)
                 {
-                    Toast.makeText(Quiz.this, "Answer Already Selected!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Quiz.this, "Answer Already Selected!", Toast.LENGTH_SHORT).show();
                 } else {
                     getAnswer(correctAnswer, getResources().getResourceEntryName(v.getId()));
                     displayAnswer(halqiyah_btn);
@@ -71,7 +72,7 @@ public class Quiz extends AppCompatActivity {
             public void onClick(View v) {
                 if (answerSelected)
                 {
-                    Toast.makeText(Quiz.this, "Answer Already Selected!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Quiz.this, "Answer Already Selected!", Toast.LENGTH_SHORT).show();
                 } else {
                     getAnswer(correctAnswer, getResources().getResourceEntryName(v.getId()));
                     displayAnswer(lahatiyah_btn);
@@ -84,7 +85,7 @@ public class Quiz extends AppCompatActivity {
             public void onClick(View v) {
                 if (answerSelected)
                 {
-                    Toast.makeText(Quiz.this, "Answer Already Selected!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Quiz.this, "Answer Already Selected!", Toast.LENGTH_SHORT).show();
                 } else {
                     getAnswer(correctAnswer, getResources().getResourceEntryName(v.getId()));
                     displayAnswer(shajariyah_haafiyah_btn);
@@ -97,7 +98,7 @@ public class Quiz extends AppCompatActivity {
             public void onClick(View v) {
                 if (answerSelected)
                 {
-                    Toast.makeText(Quiz.this, "Answer Already Selected!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Quiz.this, "Answer Already Selected!", Toast.LENGTH_SHORT).show();
                 } else {
                     getAnswer(correctAnswer, getResources().getResourceEntryName(v.getId()));
                     displayAnswer(tarfiyah_btn);
@@ -110,7 +111,7 @@ public class Quiz extends AppCompatActivity {
             public void onClick(View v) {
                 if (answerSelected)
                 {
-                    Toast.makeText(Quiz.this, "Answer Already Selected!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Quiz.this, "Answer Already Selected!", Toast.LENGTH_SHORT).show();
                 } else {
                     getAnswer(correctAnswer, getResources().getResourceEntryName(v.getId()));
                     displayAnswer(nit_eeyah_btn);
@@ -123,7 +124,7 @@ public class Quiz extends AppCompatActivity {
             public void onClick(View v) {
                 if (answerSelected)
                 {
-                    Toast.makeText(Quiz.this, "Answer Already Selected!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Quiz.this, "Answer Already Selected!", Toast.LENGTH_SHORT).show();
                 } else {
                     getAnswer(correctAnswer, getResources().getResourceEntryName(v.getId()));
                     displayAnswer(lisaveyah_btn);
@@ -136,7 +137,7 @@ public class Quiz extends AppCompatActivity {
             public void onClick(View v) {
                 if (answerSelected)
                 {
-                    Toast.makeText(Quiz.this, "Answer Already Selected!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Quiz.this, "Answer Already Selected!", Toast.LENGTH_SHORT).show();
                 } else {
                     getAnswer(correctAnswer, getResources().getResourceEntryName(v.getId()));
                     displayAnswer(ghunna_btn);
@@ -149,7 +150,7 @@ public class Quiz extends AppCompatActivity {
             public void onClick(View v) {
                 if (!answerSelected)
                 {
-                    Toast.makeText(Quiz.this, "You can't skip question", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Quiz.this, "You can't skip question", Toast.LENGTH_SHORT).show();
                 }else{
                 answerSelected = false;
                 temp_button.setBackgroundColor(0xFF5900E4);
@@ -162,6 +163,17 @@ public class Quiz extends AppCompatActivity {
             }
         });
 
+        end_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String totalquestions = questionno_tv.getText().toString();
+                String score = score_tv.getText().toString();
+                Intent intent = new Intent(Quiz.this, Result.class);
+                intent.putExtra("Total_Questions", totalquestions);
+                intent.putExtra("Score", score);
+                startActivity(intent);
+            }
+        });
 
     }
 
