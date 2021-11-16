@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -248,6 +249,29 @@ public class Quiz extends AppCompatActivity {
             btn.setBackgroundColor(0xFFFC4242);
             //Toast.makeText(Quiz.this, "Wrong", Toast.LENGTH_LONG).show();
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putString("Word", word.getText().toString());
+        savedInstanceState.putString("QuestionNo", questionno_tv.getText().toString());
+        savedInstanceState.putString("Score", score_tv.getText().toString());
+        savedInstanceState.putInt("Correct", correctAnswer);
+        //savedInstanceState.putInt("ButtonColor", temp_button.getBackground());
+        //savedInstanceState.putBoolean("AnswerSelected", answerSelected);
+        // etc.
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        word.setText(savedInstanceState.getString("Word"));
+        questionno_tv.setText(savedInstanceState.getString("QuestionNo"));
+        score_tv.setText(savedInstanceState.getString("Score"));
+        correctAnswer = savedInstanceState.getInt("Correct");
+        //answerSelected = savedInstanceState.getBoolean("AnswerSelected");
     }
 
 
